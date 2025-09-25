@@ -7,9 +7,13 @@ public final class gameSettings {
         throw new UnsupportedOperationException("Clase de utilidades - no instanciar");
     }
 
+    public static void showNumberOfCharacters(){
+        System.out.println("Existen " + Character.getTotalCharacters() + " personajes disponibles.");
+    }
+
     public static void showGameInformation(){
         System.out.println("Estas en la version " + GAME_VERSION + " del juego.");
-        System.out.println("Cuentas con " + Character.getTotalCharacters() + "personajes disponibles.");
+        showNumberOfCharacters();
     }
 
     public static String getRangeLevel(int level) {

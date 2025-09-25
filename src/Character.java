@@ -18,6 +18,8 @@ public abstract class Character implements Combatant {
         this.experience = 0;
         this.defending = false;
 
+        System.out.println("Personaje " + this.name + " creado");
+
         initializeStatistics();
     }
 
@@ -88,6 +90,10 @@ public abstract class Character implements Combatant {
     public boolean isDefending() {
         return defending;
     }
+    public void defend(){
+        System.out.println(this.name + "esta defendiendo"); // No se esta imprimiendo esto
+        this.defending = true;
+    };
     public void setDefending(boolean defending) {
         this.defending = defending;
     }
@@ -110,7 +116,7 @@ public abstract class Character implements Combatant {
 
         increaseStatistics();
 
-        System.out.println("Subiste de nivel!!!! Ahora eres:"+ this.level);
+        System.out.println("Subiste de nivel!!!! Ahora eres: "+ this.level);
     }
 
     // Paso 4: Métodos abstractos
@@ -124,7 +130,7 @@ public abstract class Character implements Combatant {
         life -= finalDamage;
         if(life <= 0){ life = 0;}
 
-        System.out.println("Has recibido " + finalDamage + "puntos de daño. Vida restante: " + life);
+        System.out.println(this.name + " recibiste " + finalDamage + " puntos de daño. Vida restante: " + life);
 
         if (life == 0){
             System.out.println("Has sido derrotado!");

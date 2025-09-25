@@ -53,7 +53,7 @@ public class Warrior extends Character {
             System.out.println("ERROR: El personaje esta muerto.");
         }
         int damage = calculateDamage();
-        System.out.println("Ataque con espada");
+        System.out.println("Warrior Attack: Ataque con espada: " + damage);
         target.receiveDamage(damage);
     }
 
